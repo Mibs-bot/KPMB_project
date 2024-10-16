@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <form action = "" method = "post">    
+            {% csrf_token %}
+        
+            <h3>Enter Mentor code/id: <br></h3>
+            <input type="text" name = mentorcode><br>
+            <h3>Enter Mentor name: <br></h3>
+            <input type="text" name = mentorname><br>
+            <h3>Enter Mentor acc date: <br></h3>
+            <input type="text" name = mentoraccdate><br>
+            <br>
+            <input type = 'submit' value = 'SUBMIT'>
+        </form>
+    </p>   
+    
+</body>
+</html>

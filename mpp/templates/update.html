@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+</head>
+<body>
+    <p>
+        {{message}}
+        <form action = "updatedata/{{updateid.mentorcode}}" method = "post">    
+            {% csrf_token %}
+        
+            <h3>Enter Mentor code/id: <br></h3>
+            <input type="text" name = "mentorcode" value="{{updateid.mentorcode}}" disabled = "false"><br>
+            <h3>Enter Mentor name: <br></h3>
+            <input type="text" name = "mentorname" value="{{updateid.mentorname}}"><br>
+            <h3>Enter Mentor acc date: <br></h3>
+            <input type="text" name = "mentoraccdate" value="{{updateid.mentoraccdate}}"><br>
+            <br>
+            <input type = 'submit' value = 'UPDATE'>
+        </form>
+    <a href="{% url 'index' %}">    this is link to homepage / index</a><br>
+    <a href="{% url 'mymentor' %}">    this is link to homepage / index</a><br>
+    <a href="{% url 'mystudent' %}">    this is link to homepage / index</a><br>
+
+</body>
+</html>

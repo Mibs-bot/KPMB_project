@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <form action = "" method = "post">    
+            {% csrf_token %}
+        
+            <h3>Enter student id: <br></h3>
+            <input type="text" name = "studentid" placeholder = ""><br>
+            <h3>Enter student name : <br></h3>
+            <input type="text" name = "studentname" placeholder = ""><br>
+            <h3>Enter student email : <br></h3>
+            <input type="text" name = 'studentemail' placeholder = ""><br>
+            <h3>Enter student age : <br></h3>
+            <input type="text" name = 'studentage' placeholder = ""><br>
+            <br>
+            
+    </p>
+            <h2>enter mentor code:</h2>
+            <select name="mentorcode" id=""> 
+            {% for n in mymentor %}
+            <option value="{{n.mentorcode}}">{{n.mentorname}}</option>
+            {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="SUBMIT">  
+            </form>
+
+    
+    
+</body>
+</html>

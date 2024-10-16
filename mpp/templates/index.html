@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td{
+            border: black, 2px, solid;
+            
+
+        }
+   
+</style>
+
+
+
+<h1>TETSUYA HAZIM</h1></a>
+<body>
+    {% load static %} <img src="{% static 'batu.jpeg' %}" alt="mympp" />
+
+
+    {% with classname="DCS4A" %}
+    <h2>hello {{classname}} -- this is calling variable firstname </h2>
+        <br>
+        <h2>hello{{studentname}} -- this is calling variablse</h2>
+    {% endwith %} 
+        <br>
+
+    <a href="{% url 'mymentor' %}">click to add new mentor</a><br>
+    <a href="{% url 'mystudent' %}">click to add new student</a>
+   
+
+    <ul>
+        {% for x in myProgramme %}
+            <li>
+                {{x.programmename}} || {{x.programmecode}}
+            </li>
+        {% endfor %}
+    </ul> 
+    
+    <table>
+        <tr>
+        <th>student id :</th>
+        <th>student name :</th>
+        <th>student email :</th>
+        <th>student age :</th>
+        <th>student mentor :</th>
+    </tr>
+
+    {% for s in mystudent %}
+            <tr>
+                    <td>{{s.studentid}}</td>
+                    <td>{{s.studentname}}</td>
+                    <td>{{s.studentemail}}</td>
+                    <td>{{s.studentage}}</td>
+                    <td>{{s.studentmentor}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+
+    <br><br>    
+
+    <table>
+        <tr>
+        <th>mentor code :</th>
+        <th>mentor name :</th>
+        <th>mentor cacc date :</th>
+    </tr>
+
+    {% for x in myMentor %}
+            <tr>
+                    <td>{{x.mentorcode}}</td>
+                    <td>{{x.mentorname}}</td>
+                    <td>{{x.mentoraccdate}}</td>
+                    <td><a href="update/{{x.mentorcode}}">UPDATE</a></td>
+                    <td><a href="viewdelete/{{x.mentorcode}}">DELETE</a></td>
+            </tr>
+            {% endfor %}
+    </table>
+
+
+   
+
+    <p>in views.py u can see how to import and fetch member</p>
+
+    </h2>
+    
+
+    </h2>
+    
+</body>
+</html>
